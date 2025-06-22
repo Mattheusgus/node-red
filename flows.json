@@ -1,0 +1,855 @@
+[
+    {
+        "id": "a241df78822df212",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ed372fab4b76f259",
+        "type": "mongodb",
+        "hostname": "mongodb",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": 27017,
+        "db": "admin",
+        "name": "Minha Nova Conexão MongoDB"
+    },
+    {
+        "id": "610d5a801ea363fc",
+        "type": "debug",
+        "z": "a241df78822df212",
+        "name": "Dados enviados para o MongoDb",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "b4a6a0454d3665ef",
+        "type": "inject",
+        "z": "a241df78822df212",
+        "name": "msg",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{     \"item\": \"Dados da API\",     \"valor\": 456,     \"origem\": \"MeuAppReact\",     \"timestampRegistro\": \"2025-06-20T17:30:00Z\" }",
+        "payloadType": "json",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "87ceec0d7a2e86da"
+            ]
+        ],
+        "info": "{\r\n    \"item\": \"Dados da API\",\r\n    \"valor\": 456,\r\n    \"origem\": \"MeuAppReact\",\r\n    \"timestampRegistro\": \"2025-06-20T17:30:00Z\"\r\n}"
+    },
+    {
+        "id": "87ceec0d7a2e86da",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 100,
+        "wires": [
+            [
+                "13e09fd131670e16"
+            ]
+        ]
+    },
+    {
+        "id": "13e09fd131670e16",
+        "type": "mongodb out",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[INSERT]",
+        "collection": "corretoras",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 560,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5ac098d44ca79b10",
+        "type": "debug",
+        "z": "a241df78822df212",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "c8cb7ba22372983d",
+        "type": "mongodb in",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[FIND]",
+        "collection": "corretoras",
+        "operation": "find",
+        "x": 510,
+        "y": 20,
+        "wires": [
+            [
+                "5ac098d44ca79b10"
+            ]
+        ]
+    },
+    {
+        "id": "47ddca3fb28e3530",
+        "type": "inject",
+        "z": "a241df78822df212",
+        "name": "Checa",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 20,
+        "wires": [
+            [
+                "67844083a96436c2"
+            ]
+        ],
+        "info": "{\r\n    \"item\": \"Dados da API\",\r\n    \"valor\": 456,\r\n    \"origem\": \"MeuAppReact\",\r\n    \"timestampRegistro\": \"2025-06-20T17:30:00Z\"\r\n}"
+    },
+    {
+        "id": "904e294f6eb4cf90",
+        "type": "inject",
+        "z": "a241df78822df212",
+        "name": "msg",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "4c307adca1fe8c3f"
+            ]
+        ],
+        "info": "{\r\n    \"item\": \"Dados da API\",\r\n    \"valor\": 456,\r\n    \"origem\": \"MeuAppReact\",\r\n    \"timestampRegistro\": \"2025-06-20T17:30:00Z\"\r\n}"
+    },
+    {
+        "id": "4c307adca1fe8c3f",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "function 2",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "d3182fc242d4de96"
+            ]
+        ]
+    },
+    {
+        "id": "d3182fc242d4de96",
+        "type": "mongodb out",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[DELETE]",
+        "collection": "corretoras",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 570,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "024ece9596aab34c",
+        "type": "http in",
+        "z": "a241df78822df212",
+        "name": "/carregar-corretoras",
+        "url": "/carregar-corretoras",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 840,
+        "wires": [
+            [
+                "524ca386dc8aefcd",
+                "e53ae47a1e23e739"
+            ]
+        ]
+    },
+    {
+        "id": "504107dc4c28a6b2",
+        "type": "mongodb out",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[INSERT]",
+        "collection": "corretoras",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 1240,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "909ea1d109fd8a97",
+        "type": "http response",
+        "z": "a241df78822df212",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 700,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "524ca386dc8aefcd",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "msg.payload = { \n    \"mensagem\": \"Dados de Corretora atualizados no banco!\",\n    \"status\":200\n    };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 900,
+        "wires": [
+            [
+                "909ea1d109fd8a97"
+            ]
+        ]
+    },
+    {
+        "id": "ea725877cf581942",
+        "type": "http in",
+        "z": "a241df78822df212",
+        "name": "/carregar-corretoras",
+        "url": "/carregar-corretoras",
+        "method": "delete",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 640,
+        "wires": [
+            [
+                "584c33b446393a72",
+                "ce6e0d28beb2fc49"
+            ]
+        ]
+    },
+    {
+        "id": "584c33b446393a72",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "function 3",
+        "func": "msg.payload = {}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 640,
+        "wires": [
+            [
+                "6b8a9f512c9f8752"
+            ]
+        ]
+    },
+    {
+        "id": "6b8a9f512c9f8752",
+        "type": "mongodb out",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[DELETE]",
+        "collection": "corretoras",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 670,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "107afbea70d13c7e",
+        "type": "http response",
+        "z": "a241df78822df212",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 720,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "ce6e0d28beb2fc49",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "msg.payload = { \n    \"mensagem\": \"Dados das corretoras removidos!\",\n    \"status\":200\n    };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 720,
+        "wires": [
+            [
+                "107afbea70d13c7e"
+            ]
+        ]
+    },
+    {
+        "id": "1b55805494239ca5",
+        "type": "http in",
+        "z": "a241df78822df212",
+        "name": "/corretoras",
+        "url": "/corretoras",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 460,
+        "wires": [
+            [
+                "07f11c5c410462e8"
+            ]
+        ]
+    },
+    {
+        "id": "ed067361daa71ba8",
+        "type": "http response",
+        "z": "a241df78822df212",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1040,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "1babc28af1632c14",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "msg.payload = {\n    \"mensagem\": \"Consultando corretoras\",\n    \"status\": 200\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0bcc1fdef02b4efe",
+        "type": "mongodb in",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[FIND]",
+        "collection": "corretoras",
+        "operation": "find",
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "ed067361daa71ba8"
+            ]
+        ]
+    },
+    {
+        "id": "b97902a398b85d27",
+        "type": "http request",
+        "z": "a241df78822df212",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://brasilapi.com.br/api/cvm/corretoras/v1",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 1400,
+        "wires": [
+            [
+                "c1a6810b393c4a60"
+            ]
+        ]
+    },
+    {
+        "id": "42805da9b8c48f00",
+        "type": "debug",
+        "z": "a241df78822df212",
+        "name": "Dados enviados para o MongoDb",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "3e74ac292aea5fe5",
+        "type": "http in",
+        "z": "a241df78822df212",
+        "name": "/api/corretoras",
+        "url": "/api/corretoras",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 1440,
+        "wires": [
+            [
+                "b97902a398b85d27",
+                "32ca72dfd251f4ea"
+            ]
+        ]
+    },
+    {
+        "id": "c1a6810b393c4a60",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "\n\n// Define o cabeçalho Content-Type para JSON (boa prática)\nmsg.headers = { 'Content-Type': 'application/json' };\n\n\n\n\nreturn msg; // Retorna a mensagem modificada para o próximo nó",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 1400,
+        "wires": [
+            [
+                "42805da9b8c48f00"
+            ]
+        ]
+    },
+    {
+        "id": "aa6984991bd7bc8f",
+        "type": "mongodb out",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[INSERT]",
+        "collection": "registros_api",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 1040,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "e3d29ffa31ed4c87",
+        "type": "http response",
+        "z": "a241df78822df212",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 680,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "32ca72dfd251f4ea",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "msg.payload = { \n    \"mensagem\": \"Dados de Corretora atualizados!\",\n    \"status\":200\n    };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1500,
+        "wires": [
+            [
+                "e3d29ffa31ed4c87"
+            ]
+        ]
+    },
+    {
+        "id": "d0cd9ccd2c265bb6",
+        "type": "http in",
+        "z": "a241df78822df212",
+        "name": "/api/corretoras/delete",
+        "url": "/api/corretoras",
+        "method": "delete",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 1240,
+        "wires": [
+            [
+                "a1acabd46ea9fa82",
+                "430864bc0aa97da1"
+            ]
+        ]
+    },
+    {
+        "id": "a1acabd46ea9fa82",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "function 4",
+        "func": "msg.payload = {}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6b791a117c017d1",
+        "type": "mongodb out",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[DELETE]",
+        "collection": "registros_api",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 650,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "dadf2a9825cc2e69",
+        "type": "http response",
+        "z": "a241df78822df212",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 700,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "430864bc0aa97da1",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "msg.payload = { \n    \"mensagem\": \"Dados das corretoras removidos!\",\n    \"status\":200\n    };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1320,
+        "wires": [
+            [
+                "dadf2a9825cc2e69"
+            ]
+        ]
+    },
+    {
+        "id": "eb5b86e5833c9da3",
+        "type": "http in",
+        "z": "a241df78822df212",
+        "name": "/cep/:cep/get",
+        "url": "/consulta-cep",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 1060,
+        "wires": [
+            [
+                "39b45e1139aa8978"
+            ]
+        ]
+    },
+    {
+        "id": "0f0cc8e4979b8abd",
+        "type": "http response",
+        "z": "a241df78822df212",
+        "name": "Retorno HTTP",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1120,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "b22a0bdaedf9f567",
+        "type": "mongodb in",
+        "z": "a241df78822df212",
+        "mongodb": "ed372fab4b76f259",
+        "name": "Mongo[FIND]",
+        "collection": "registros_api",
+        "operation": "find",
+        "x": 450,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ecbcdac95a757f7",
+        "type": "http request",
+        "z": "a241df78822df212",
+        "name": "Chamada BrasilAPI",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 550,
+        "y": 1140,
+        "wires": [
+            [
+                "592de94c740e3242",
+                "0f0cc8e4979b8abd"
+            ]
+        ]
+    },
+    {
+        "id": "592de94c740e3242",
+        "type": "debug",
+        "z": "a241df78822df212",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "e3b5c32bba35e8c1",
+        "type": "debug",
+        "z": "a241df78822df212",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "39b45e1139aa8978",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "const cep = msg.payload.cep;\nmsg.method = \"GET\";\nmsg.url = `https://brasilapi.com.br/api/cep/v2/${cep}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 308.81251525878906,
+        "y": 1066.2125244140625,
+        "wires": [
+            [
+                "7ecbcdac95a757f7"
+            ]
+        ]
+    },
+    {
+        "id": "e53ae47a1e23e739",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "msg.method = \"GET\";\nmsg.url = \"https://brasilapi.com.br/api/cvm/corretoras/v1\";\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 820,
+        "wires": [
+            [
+                "63852c65fdbeeb07"
+            ]
+        ]
+    },
+    {
+        "id": "67844083a96436c2",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "function 5",
+        "func": "msg.payload = {}; // busca todos os registros\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 20,
+        "wires": [
+            [
+                "c8cb7ba22372983d"
+            ]
+        ]
+    },
+    {
+        "id": "63852c65fdbeeb07",
+        "type": "http request",
+        "z": "a241df78822df212",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 690,
+        "y": 820,
+        "wires": [
+            [
+                "610d5a801ea363fc",
+                "1b0fdb15dc89b279"
+            ]
+        ]
+    },
+    {
+        "id": "1b0fdb15dc89b279",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "Processar Resposta API",
+        "func": "let corretoras = msg.payload; // array de objetos\nlet mensagens = [];\n\nfor (let i = 0; i < corretoras.length; i++) {\n    mensagens.push({ payload: corretoras[i] });\n}\n\nreturn [mensagens]; // envia como múltiplas mensagens\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 820,
+        "wires": [
+            [
+                "504107dc4c28a6b2"
+            ]
+        ]
+    },
+    {
+        "id": "07f11c5c410462e8",
+        "type": "function",
+        "z": "a241df78822df212",
+        "name": "function 6",
+        "func": "msg.payload = {}; // busca todos os registros\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 460,
+        "wires": [
+            [
+                "0bcc1fdef02b4efe"
+            ]
+        ]
+    }
+]

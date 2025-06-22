@@ -1,0 +1,165 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm install node-red-node-mongodb@0.2.5
+8 verbose argv "install" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "--save-prefix" "~" "--omit" "dev" "--engine-strict" "node-red-node-mongodb@0.2.5"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2025-06-20T18_57_22_828Z-
+10 verbose logfile /data/.npm/_logs/2025-06-20T18_57_22_828Z-debug-0.log
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest node-red-node-mongodb@0.2.5
+15 silly packumentCache full:https://registry.npmjs.org/node-red-node-mongodb cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/node-red-node-mongodb 1133ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/node-red-node-mongodb set size:undefined disposed:false
+18 silly placeDep ROOT node-red-node-mongodb@0.2.5 OK for: node-red-project@0.0.1 want: 0.2.5
+19 silly fetch manifest mongodb@^3.6.3
+20 silly packumentCache full:https://registry.npmjs.org/mongodb cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/mongodb 297ms (cache revalidated)
+22 silly packumentCache full:https://registry.npmjs.org/mongodb set size:3212126 disposed:false
+23 silly placeDep node_modules/node-red-node-mongodb mongodb@3.7.4 OK for: node-red-node-mongodb@0.2.5 want: ^3.6.3
+24 silly fetch manifest bl@^2.2.1
+25 silly packumentCache full:https://registry.npmjs.org/bl cache-miss
+26 silly fetch manifest bson@^1.1.4
+27 silly packumentCache full:https://registry.npmjs.org/bson cache-miss
+28 silly fetch manifest denque@^1.4.1
+29 silly packumentCache full:https://registry.npmjs.org/denque cache-miss
+30 silly fetch manifest safe-buffer@^5.1.2
+31 silly packumentCache full:https://registry.npmjs.org/safe-buffer cache-miss
+32 silly fetch manifest optional-require@^1.1.8
+33 silly packumentCache full:https://registry.npmjs.org/optional-require cache-miss
+34 silly fetch manifest saslprep@^1.0.0
+35 silly packumentCache full:https://registry.npmjs.org/saslprep cache-miss
+36 http fetch GET 200 https://registry.npmjs.org/bson 258ms (cache revalidated)
+37 silly packumentCache full:https://registry.npmjs.org/bson set size:547800 disposed:false
+38 http fetch GET 200 https://registry.npmjs.org/bl 310ms (cache miss)
+39 silly packumentCache full:https://registry.npmjs.org/bl set size:undefined disposed:false
+40 http fetch GET 200 https://registry.npmjs.org/saslprep 305ms (cache miss)
+41 silly packumentCache full:https://registry.npmjs.org/saslprep set size:undefined disposed:false
+42 http fetch GET 200 https://registry.npmjs.org/safe-buffer 331ms (cache miss)
+43 silly packumentCache full:https://registry.npmjs.org/safe-buffer set size:undefined disposed:false
+44 http fetch GET 200 https://registry.npmjs.org/denque 350ms (cache miss)
+45 silly packumentCache full:https://registry.npmjs.org/denque set size:undefined disposed:false
+46 http fetch GET 200 https://registry.npmjs.org/optional-require 888ms (cache miss)
+47 silly packumentCache full:https://registry.npmjs.org/optional-require set size:undefined disposed:false
+48 silly placeDep ROOT bl@2.2.1 OK for: mongodb@3.7.4 want: ^2.2.1
+49 silly placeDep node_modules/node-red-node-mongodb bson@1.1.6 OK for: mongodb@3.7.4 want: ^1.1.4
+50 silly placeDep ROOT denque@1.5.1 OK for: mongodb@3.7.4 want: ^1.4.1
+51 silly placeDep ROOT optional-require@1.1.8 OK for: mongodb@3.7.4 want: ^1.1.8
+52 silly placeDep ROOT safe-buffer@5.2.1 OK for: mongodb@3.7.4 want: ^5.1.2
+53 silly placeDep ROOT saslprep@1.0.3 OK for: mongodb@3.7.4 want: ^1.0.0
+54 silly fetch manifest safe-buffer@^5.1.1
+55 silly packumentCache full:https://registry.npmjs.org/safe-buffer cache-miss
+56 silly fetch manifest readable-stream@^2.3.5
+57 silly packumentCache full:https://registry.npmjs.org/readable-stream cache-miss
+58 silly fetch manifest require-at@^1.0.6
+59 silly packumentCache full:https://registry.npmjs.org/require-at cache-miss
+60 http fetch GET 200 https://registry.npmjs.org/safe-buffer 95ms (cache hit)
+61 silly packumentCache full:https://registry.npmjs.org/safe-buffer set size:41183 disposed:false
+62 http fetch GET 200 https://registry.npmjs.org/readable-stream 204ms (cache miss)
+63 silly packumentCache full:https://registry.npmjs.org/readable-stream set size:undefined disposed:false
+64 http fetch GET 200 https://registry.npmjs.org/require-at 792ms (cache miss)
+65 silly packumentCache full:https://registry.npmjs.org/require-at set size:undefined disposed:false
+66 silly placeDep ROOT readable-stream@2.3.8 OK for: bl@2.2.1 want: ^2.3.5
+67 silly fetch manifest isarray@~1.0.0
+68 silly packumentCache full:https://registry.npmjs.org/isarray cache-miss
+69 silly fetch manifest inherits@~2.0.3
+70 silly packumentCache full:https://registry.npmjs.org/inherits cache-miss
+71 silly fetch manifest safe-buffer@~5.1.1
+72 silly packumentCache full:https://registry.npmjs.org/safe-buffer cache-hit
+73 silly fetch manifest core-util-is@~1.0.0
+74 silly packumentCache full:https://registry.npmjs.org/core-util-is cache-miss
+75 silly fetch manifest string_decoder@~1.1.1
+76 silly packumentCache full:https://registry.npmjs.org/string_decoder cache-miss
+77 silly fetch manifest util-deprecate@~1.0.1
+78 silly packumentCache full:https://registry.npmjs.org/util-deprecate cache-miss
+79 silly fetch manifest process-nextick-args@~2.0.0
+80 silly packumentCache full:https://registry.npmjs.org/process-nextick-args cache-miss
+81 http fetch GET 200 https://registry.npmjs.org/core-util-is 194ms (cache miss)
+82 silly packumentCache full:https://registry.npmjs.org/core-util-is set size:undefined disposed:false
+83 http fetch GET 200 https://registry.npmjs.org/inherits 204ms (cache miss)
+84 silly packumentCache full:https://registry.npmjs.org/inherits set size:undefined disposed:false
+85 http fetch GET 200 https://registry.npmjs.org/util-deprecate 197ms (cache miss)
+86 silly packumentCache full:https://registry.npmjs.org/util-deprecate set size:undefined disposed:false
+87 http fetch GET 200 https://registry.npmjs.org/isarray 214ms (cache miss)
+88 silly packumentCache full:https://registry.npmjs.org/isarray set size:undefined disposed:false
+89 http fetch GET 200 https://registry.npmjs.org/string_decoder 208ms (cache miss)
+90 silly packumentCache full:https://registry.npmjs.org/string_decoder set size:undefined disposed:false
+91 http fetch GET 200 https://registry.npmjs.org/process-nextick-args 270ms (cache miss)
+92 silly packumentCache full:https://registry.npmjs.org/process-nextick-args set size:undefined disposed:false
+93 silly placeDep ROOT require-at@1.0.6 OK for: optional-require@1.1.8 want: ^1.0.6
+94 silly placeDep ROOT core-util-is@1.0.3 OK for: readable-stream@2.3.8 want: ~1.0.0
+95 silly placeDep ROOT inherits@2.0.4 OK for: readable-stream@2.3.8 want: ~2.0.3
+96 silly placeDep ROOT isarray@1.0.0 OK for: readable-stream@2.3.8 want: ~1.0.0
+97 silly placeDep ROOT process-nextick-args@2.0.1 OK for: readable-stream@2.3.8 want: ~2.0.0
+98 silly placeDep node_modules/readable-stream safe-buffer@5.1.2 OK for: readable-stream@2.3.8 want: ~5.1.1
+99 silly placeDep ROOT string_decoder@1.1.1 OK for: readable-stream@2.3.8 want: ~1.1.1
+100 silly placeDep ROOT util-deprecate@1.0.2 OK for: readable-stream@2.3.8 want: ~1.0.1
+101 silly fetch manifest safe-buffer@~5.1.0
+102 silly packumentCache full:https://registry.npmjs.org/safe-buffer cache-hit
+103 silly placeDep node_modules/string_decoder safe-buffer@5.1.2 OK for: string_decoder@1.1.1 want: ~5.1.0
+104 silly reify moves {}
+105 silly tarball no local data for process-nextick-args@https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz. Extracting by manifest.
+106 silly tarball no local data for isarray@https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz. Extracting by manifest.
+107 silly tarball no local data for string_decoder@https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz. Extracting by manifest.
+108 silly tarball no local data for inherits@https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz. Extracting by manifest.
+109 silly tarball no local data for util-deprecate@https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz. Extracting by manifest.
+110 silly tarball no local data for core-util-is@https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz. Extracting by manifest.
+111 silly tarball no local data for require-at@https://registry.npmjs.org/require-at/-/require-at-1.0.6.tgz. Extracting by manifest.
+112 silly tarball no local data for readable-stream@https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.8.tgz. Extracting by manifest.
+113 silly tarball no local data for saslprep@https://registry.npmjs.org/saslprep/-/saslprep-1.0.3.tgz. Extracting by manifest.
+114 silly tarball no local data for node-red-node-mongodb@https://registry.npmjs.org/node-red-node-mongodb/-/node-red-node-mongodb-0.2.5.tgz. Extracting by manifest.
+115 silly tarball no local data for optional-require@https://registry.npmjs.org/optional-require/-/optional-require-1.1.8.tgz. Extracting by manifest.
+116 silly tarball no local data for denque@https://registry.npmjs.org/denque/-/denque-1.5.1.tgz. Extracting by manifest.
+117 silly tarball no local data for bl@https://registry.npmjs.org/bl/-/bl-2.2.1.tgz. Extracting by manifest.
+118 silly tarball no local data for mongodb@https://registry.npmjs.org/mongodb/-/mongodb-3.7.4.tgz. Extracting by manifest.
+119 silly tarball no local data for safe-buffer@https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz. Extracting by manifest.
+120 silly tarball no local data for bson@https://registry.npmjs.org/bson/-/bson-1.1.6.tgz. Extracting by manifest.
+121 silly tarball no local data for safe-buffer@https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz. Extracting by manifest.
+122 silly tarball no local data for safe-buffer@https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz. Extracting by manifest.
+123 http fetch GET 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz 1051ms (cache miss)
+124 http fetch GET 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz 1055ms (cache miss)
+125 http fetch GET 200 https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz 1071ms (cache miss)
+126 http fetch GET 200 https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz 1083ms (cache miss)
+127 http fetch GET 200 https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz 1084ms (cache miss)
+128 http fetch GET 200 https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz 1099ms (cache miss)
+129 http fetch GET 200 https://registry.npmjs.org/require-at/-/require-at-1.0.6.tgz 1176ms (cache miss)
+130 http fetch GET 200 https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz 1080ms (cache miss)
+131 http fetch GET 200 https://registry.npmjs.org/node-red-node-mongodb/-/node-red-node-mongodb-0.2.5.tgz 1198ms (cache miss)
+132 http fetch GET 200 https://registry.npmjs.org/denque/-/denque-1.5.1.tgz 1190ms (cache miss)
+133 http fetch GET 200 https://registry.npmjs.org/optional-require/-/optional-require-1.1.8.tgz 1214ms (cache miss)
+134 http fetch GET 200 https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz 1104ms (cache miss)
+135 http fetch GET 200 https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz 1196ms (cache miss)
+136 http fetch GET 200 https://registry.npmjs.org/bl/-/bl-2.2.1.tgz 1260ms (cache miss)
+137 http fetch GET 200 https://registry.npmjs.org/saslprep/-/saslprep-1.0.3.tgz 1518ms (cache miss)
+138 http fetch GET 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.8.tgz 1548ms (cache miss)
+139 http fetch GET 200 https://registry.npmjs.org/bson/-/bson-1.1.6.tgz 1509ms (cache miss)
+140 http fetch GET 200 https://registry.npmjs.org/mongodb/-/mongodb-3.7.4.tgz 2475ms (cache miss)
+141 silly ADD node_modules/util-deprecate
+142 silly ADD node_modules/string_decoder
+143 silly ADD node_modules/string_decoder/node_modules/safe-buffer
+144 silly ADD node_modules/process-nextick-args
+145 silly ADD node_modules/isarray
+146 silly ADD node_modules/inherits
+147 silly ADD node_modules/core-util-is
+148 silly ADD node_modules/require-at
+149 silly ADD node_modules/readable-stream
+150 silly ADD node_modules/readable-stream/node_modules/safe-buffer
+151 silly ADD node_modules/saslprep
+152 silly ADD node_modules/safe-buffer
+153 silly ADD node_modules/optional-require
+154 silly ADD node_modules/denque
+155 silly ADD node_modules/bl
+156 silly ADD node_modules/node-red-node-mongodb
+157 silly ADD node_modules/node-red-node-mongodb/node_modules/bson
+158 silly ADD node_modules/node-red-node-mongodb/node_modules/mongodb
+159 verbose cwd /data
+160 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+161 verbose node v20.19.0
+162 verbose npm  v10.8.2
+163 verbose exit 0
+164 info ok
