@@ -95,7 +95,7 @@
         "z": "a241df78822df212",
         "name": "/carregar-corretoras",
         "url": "/carregar-corretoras",
-        "method": "post",
+        "method": "get",
         "upload": true,
         "swaggerDoc": "",
         "x": 230,
