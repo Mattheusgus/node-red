@@ -216,14 +216,19 @@ module.exports = {
    * It can be a single function or an array of middleware functions.
    */
   httpNodeMiddleware: function (req, res, next) {
-    // Permite requisições do seu frontend React (http://localhost:3000)
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5174");
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5174");
-    res.setHeader(
-      "Access-Control-Allow-Origin",
-      "https://consulta-cep-coral.vercel.app"
-    );
+    // Lista de origens permitidas
+    const allowedOrigins = [
+      "http://localhost:3000",
+      "http://localhost:5174",
+      "https://consulta-cep-coral.vercel.app",
+    ];
+
+    const origin = req.headers.origin;
+
+    if (allowedOrigins.includes(origin)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+    }
+
     res.setHeader(
       "Access-Control-Allow-Methods",
       "GET, POST, PUT, DELETE, OPTIONS"
@@ -231,14 +236,14 @@ module.exports = {
     res.setHeader(
       "Access-Control-Allow-Headers",
       "Content-Type, Authorization"
-    );
+    ); // Adicione outros cabeçalhos que você usa, como 'Authorization'
 
-    // Lida com requisições preflight (OPTIONS)
+    // Responde a requisições OPTIONS (preflight requests)
     if (req.method === "OPTIONS") {
-      res.statusCode = 204; // No Content
-      return res.end();
+      res.sendStatus(204); // Responde com sucesso sem conteúdo
+    } else {
+      next(); // Continua para o próximo middleware/rota
     }
-    next();
   },
 
   /** When httpAdminRoot is used to move the UI to a different root path, the
