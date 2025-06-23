@@ -219,6 +219,11 @@ module.exports = {
     // Permite requisições do seu frontend React (http://localhost:3000)
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:5174");
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5174");
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      "https://consulta-cep-coral.vercel.app"
+    );
     res.setHeader(
       "Access-Control-Allow-Methods",
       "GET, POST, PUT, DELETE, OPTIONS"
